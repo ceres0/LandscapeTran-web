@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineComponent } from 'vue'
-import Carousel from '@/components/Carousel.vue';
+import Carousel from '@/components/Carousel.vue'
 </script>
 
 <template>

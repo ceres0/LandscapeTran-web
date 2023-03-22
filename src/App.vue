@@ -1,9 +1,24 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import { NBackTop } from 'naive-ui'
+import { useLoadingBar } from 'naive-ui'
+import { defineComponent } from 'vue'
+
+defineComponent({
+  setup() {
+    const loadingBar = useLoadingBar()
+    return {
+      loadingBar
+    }
+  }
+})
 </script>
 
 <template>
+  <!-- <n-loading-bar-provider>
+    <content />
+  </n-loading-bar-provider> -->
   <header>
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
@@ -16,7 +31,9 @@ import HelloWorld from './components/HelloWorld.vue'
   </header>
 
   <RouterView />
+  <n-back-top :right="100" />
 </template>
+
 
 <style scoped>
 header {
