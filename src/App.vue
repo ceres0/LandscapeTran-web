@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 import { NBackTop } from 'naive-ui'
 import { useLoadingBar } from 'naive-ui'
 import { defineComponent } from 'vue'
+import { NSpace } from 'naive-ui'
 
 defineComponent({
   setup() {
@@ -20,12 +20,10 @@ defineComponent({
     <content />
   </n-loading-bar-provider> -->
   <header>
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
+    <div>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">主页</RouterLink>
+        <RouterLink to="/community">社区</RouterLink>
       </nav>
     </div>
   </header>
@@ -39,11 +37,6 @@ defineComponent({
 header {
   line-height: 1.5;
   max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
 }
 
 nav {
@@ -71,16 +64,13 @@ nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   header {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+ 
 
   header .wrapper {
     display: flex;
@@ -96,5 +86,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>
