@@ -12,3 +12,5 @@ app.use(naive)
 
 app.mount('#app')
 
+// const BaseAPI = import.meta.env.VITE_API_URL + import.meta.env.VITE_API_BASE
+// console.log(BaseAPI)

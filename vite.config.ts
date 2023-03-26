@@ -6,15 +6,24 @@ import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   console.log(mode)
-  const env = loadEnv(mode, process.cwd(), 'VITE_')
+  const env = loadEnv(mode, process.cwd(), '')
   console.log(env)
   return {
     plugins: [vue()],
+    server: {
+      proxy: {
+        '/api': {
+          target: env.VITE_APP_API_HOST + env.VITE_APP_BASE_API,
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, '')
+        }
+      }
+    },
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
         '~': fileURLToPath(new URL('./', import.meta.url))
-      }  
+      }
     },
     define: {
       __APP_ENV__: env.APP_ENV

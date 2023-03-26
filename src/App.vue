@@ -1,22 +1,13 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import { useLoadingBar } from 'naive-ui'
 import { defineComponent } from 'vue'
 
-defineComponent({
-  setup() {
-    const loadingBar = useLoadingBar()
-    return {
-      loadingBar
-    }
-  }
-})
 </script>
 
 <template>
   <!-- <n-loading-bar-provider>
-              <content />
-            </n-loading-bar-provider> -->
+                <content />
+              </n-loading-bar-provider> -->
   <header>
     <div>
       <nav>

@@ -6,7 +6,8 @@
   </n-button>
   <n-modal v-model:show="showModal" :mask-closable="false" preset="dialog" title="画风迁移" negative-text="算了"
     @negative-click="onNegativeClick">
-    <n-upload multiple directory-dnd action="https://www.mocky.io/v2/5e4bafc63100007100d8b70f" :max="5">
+    <n-upload multiple directory-dnd action="/api/upload" :max="1" accept=".png,.jpg,.jpeg" @finish="handleFinish">
+      <!-- {{ BaseAPI }} -->
       <n-upload-dragger>
         <div style="margin-bottom: 12px">
           <n-icon size="48" :depth="3">
@@ -17,50 +18,47 @@
           点击或者拖动图片到该区域来上传
         </n-text>
         <n-p depth="3" style="margin: 8px 0 0 0">
-          请不要上传敏感数据，比如你的银行卡号和密码，信用卡号有效期和安全码
+          仅支持png、jpg、jpeg格式的图片文件
         </n-p>
       </n-upload-dragger>
     </n-upload>
+    <img src="C:\Users\guyih\LandscapeTran\e1aa50af-5ff2-4ae1-b8e1-1461e0b00cea.jpg" />
   </n-modal>
 </template>
-<script lang="ts">
+<script lang="ts" setup>
 import { useMessage } from 'naive-ui'
 import type { UploadFileInfo } from 'naive-ui'
 import { defineComponent, ref } from 'vue'
 import { CashOutline as CashIcon, ArchiveOutline as ArchiveIcon } from '@vicons/ionicons5'
 
-export default defineComponent({
-  components: {
-    CashIcon,
-    ArchiveIcon
-  },
-  setup() {
-    const message = useMessage()
-    const showModalRef = ref(false)
+const message = useMessage()
+const showModal = ref(false)
 
-    return {
-      showModal: showModalRef,
-      onNegativeClick() {
-        message.success('Cancel')
-        showModalRef.value = false
-      },
-      onPositiveClick() {
-        message.success('Submit')
-        showModalRef.value = false
-      },
-      async beforeUpload(data: {
-        file: UploadFileInfo
-        fileList: UploadFileInfo[]
-      }) {
-        if (data.file.file?.type !== 'image/png' && data.file.file?.type !== 'image/jpeg' && data.file.file?.type !== 'image/jpg') {
-          message.error('只能上传png格式的图片文件，请重新上传')
-          return false
-        }
-        return true
-      }
-    }
-  }
-})
+// console.log(BaseAPI)
+
+function onNegativeClick() {
+  message.success('Cancel')
+  showModal.value = false
+}
+const handleFinish = ({
+  file,
+  event
+}: {
+  file: UploadFileInfo
+  event?: ProgressEvent
+}): UploadFileInfo => {
+  console.log(event)
+  console.log(file)
+  message.success("上传成功")
+  let fileName = (event?.target as XMLHttpRequest).responseXML
+  // console.log(file)
+  // const ext = file.name.split('.')[1]
+  // file.name = `更名.${ext}`
+  // file.url = String(fileUrl)
+  // console.log(file)
+  return file
+}
+
 </script>
 <style scoped>
 .light-green {
