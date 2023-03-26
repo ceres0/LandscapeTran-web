@@ -11,3 +11,4 @@ app.use(router)
 app.use(naive)
 
 app.mount('#app')
+

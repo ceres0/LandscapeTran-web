@@ -3,6 +3,15 @@ import Carousel from '@/components/Carousel.vue'
 import TranDialog from '@/components/TranDialog.vue'
 import ImageShow from '@/components/ImageShow.vue'
 // import { NButton, NGrid } from 'naive-ui';
+const srcList = [
+  '0001.png',
+  '0002.png',
+  '0003.png',
+  '0004.png',
+  '0005.png',
+  '0006.png',
+  '0007.png'
+]
 </script>
 
 <template>
@@ -19,9 +28,9 @@ import ImageShow from '@/components/ImageShow.vue'
                   </n-dialog-provider>
                 </n-notification-provider>
               </n-message-provider>
-            </n-loading-bar-provider>
-          </div>
-        </n-grid-item>
+          </n-loading-bar-provider>
+        </div>
+      </n-grid-item>
       </n-grid>
     </n-layout>
     <n-layout content-style="padding: 24px;">
@@ -34,14 +43,16 @@ import ImageShow from '@/components/ImageShow.vue'
       </n-grid>
     </n-layout>
     <n-layout embedded content-style="padding: 24px;">
-      <n-layout-header>社区</n-layout-header>
+      <!-- <n-layout-header><n-gradient-text :gradient="{
+                from: 'rgb(85, 85, 85)',
+                to: 'rgb(170, 170, 170)'
+              }" size="30">社区</n-gradient-text></n-layout-header> -->
       <n-layout-content>
         <n-card>
           <!-- <div class="green"> -->
           <n-grid x-gap="12" :cols="4">
-            <n-gi v-for="i in [1, 2, 3, 4, 5]">
-              {{ i }}
-              <ImageShow v-bind:num="i" />
+            <n-gi v-for="src in srcList">
+              <ImageShow v-bind:src="src" />
             </n-gi>
           </n-grid>
           <!-- </div>  -->

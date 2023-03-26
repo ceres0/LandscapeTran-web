@@ -4,10 +4,10 @@ import { ArrowBack, ArrowForward } from '@vicons/ionicons5'
 </script>
 <template>
     <n-carousel show-arrow autoplay>
-        <img class="carousel-img" src="/static/0001.png">
-        <img class="carousel-img" src="/static/0002.png">
-        <img class="carousel-img" src="/static/0003.png">
-        <img class="carousel-img" src="/static/0006.png">
+        <img class="carousel-img" src="@/assets/images/0001.png">
+        <img class="carousel-img" src="@/assets/images/0002.png">
+        <img class="carousel-img" src="@/assets/images/0003.png">
+        <img class="carousel-img" src="@/assets/images/0006.png">
         <template #arrow="{ prev, next }">
             <div class="custom-arrow">
                 <button type="button" class="custom-arrow--left" @click="prev">
