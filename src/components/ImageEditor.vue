@@ -209,7 +209,7 @@ export default {
 }
 </script>
 
-<!-- <style lang="scss" scoped>
+<style lang="scss" scoped>
 .drawing-container {
     height: 900px;
     position: relative;
@@ -220,5 +220,5 @@ export default {
         top: 15px;
     }
 }
-</style> -->
+</style>
 
