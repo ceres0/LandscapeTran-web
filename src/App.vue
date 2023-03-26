@@ -15,15 +15,15 @@ defineComponent({
 
 <template>
   <!-- <n-loading-bar-provider>
-            <content />
-          </n-loading-bar-provider> -->
+              <content />
+            </n-loading-bar-provider> -->
   <header>
     <div>
-      <!-- <nav>
-          <RouterLink to="/">主页</RouterLink>
-          <RouterLink to="/draw">创作</RouterLink>
-          <RouterLink to="/community">社区</RouterLink>
-        </nav> -->
+      <nav>
+        <RouterLink to="/">主页</RouterLink>
+        <RouterLink to="/draw">创作</RouterLink>
+        <RouterLink to="/community">社区</RouterLink>
+      </nav>
     </div>
   </header>
 
