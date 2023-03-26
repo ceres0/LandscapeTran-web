@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import { NBackTop } from 'naive-ui'
 import { useLoadingBar } from 'naive-ui'
 import { defineComponent } from 'vue'
-import { NSpace } from 'naive-ui'
 
 defineComponent({
   setup() {
@@ -17,14 +15,15 @@ defineComponent({
 
 <template>
   <!-- <n-loading-bar-provider>
-    <content />
-  </n-loading-bar-provider> -->
+            <content />
+          </n-loading-bar-provider> -->
   <header>
     <div>
-      <nav>
-        <RouterLink to="/">主页</RouterLink>
-        <RouterLink to="/community">社区</RouterLink>
-      </nav>
+      <!-- <nav>
+          <RouterLink to="/">主页</RouterLink>
+          <RouterLink to="/draw">创作</RouterLink>
+          <RouterLink to="/community">社区</RouterLink>
+        </nav> -->
     </div>
   </header>
 
@@ -34,6 +33,10 @@ defineComponent({
 
 
 <style scoped>
+root {
+  background-color: #f5f5dc;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;

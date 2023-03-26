@@ -4,10 +4,10 @@ import { ArrowBack, ArrowForward } from '@vicons/ionicons5'
 </script>
 <template>
     <n-carousel show-arrow autoplay>
-        <img class="carousel-img" src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg">
-        <img class="carousel-img" src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel2.jpeg">
-        <img class="carousel-img" src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg">
-        <img class="carousel-img" src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel4.jpeg">
+        <img class="carousel-img" src="/static/0001.png">
+        <img class="carousel-img" src="/static/0002.png">
+        <img class="carousel-img" src="/static/0003.png">
+        <img class="carousel-img" src="/static/0006.png">
         <template #arrow="{ prev, next }">
             <div class="custom-arrow">
                 <button type="button" class="custom-arrow--left" @click="prev">
@@ -34,7 +34,7 @@ import { ArrowBack, ArrowForward } from '@vicons/ionicons5'
 <style scoped>
 .carousel-img {
     width: 100%;
-    height: 240px;
+    height: 100%;
     object-fit: cover;
 }
 
