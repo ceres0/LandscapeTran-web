@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ImageEditor from '@/components/ImageEditor'
+import ImageEditor from '@/components/ImageEditor.vue'
 </script>
 
 <template>
