@@ -6,7 +6,7 @@ import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   console.log(mode)
-  const env = loadEnv(mode, process.cwd(), '')
+  const env = loadEnv(mode, process.cwd(), 'VITE_')
   console.log(env)
   return {
     plugins: [vue()],
@@ -16,6 +16,11 @@ export default defineConfig(({ command, mode }) => {
           target: env.VITE_APP_API_HOST + env.VITE_APP_BASE_API,
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, '')
+        },
+        '/img': {
+          target: env.VITE_APP_API_HOST + env.VITE_APP_BASE_IMG,
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/img/, '')
         }
       }
     },

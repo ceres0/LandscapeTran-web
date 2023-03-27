@@ -6,7 +6,8 @@
   </n-button>
   <n-modal v-model:show="showModal" :mask-closable="false" preset="dialog" title="画风迁移" negative-text="算了"
     @negative-click="onNegativeClick">
-    <n-upload multiple directory-dnd action="/api/upload" :max="1" accept=".png,.jpg,.jpeg" @finish="handleFinish">
+    <n-upload multiple directory-dnd list-type="image" action="/api/upload" :max="1" accept=".png,.jpg,.jpeg"
+      @finish="handleFinish">
       <!-- {{ BaseAPI }} -->
       <n-upload-dragger>
         <div style="margin-bottom: 12px">
@@ -22,18 +23,18 @@
         </n-p>
       </n-upload-dragger>
     </n-upload>
-    <img src="C:\Users\guyih\LandscapeTran\e1aa50af-5ff2-4ae1-b8e1-1461e0b00cea.jpg" />
   </n-modal>
 </template>
 <script lang="ts" setup>
 import { useMessage } from 'naive-ui'
 import type { UploadFileInfo } from 'naive-ui'
-import { defineComponent, ref } from 'vue'
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { CashOutline as CashIcon, ArchiveOutline as ArchiveIcon } from '@vicons/ionicons5'
 
 const message = useMessage()
 const showModal = ref(false)
-
+const router = useRouter()
 // console.log(BaseAPI)
 
 function onNegativeClick() {
@@ -50,12 +51,10 @@ const handleFinish = ({
   console.log(event)
   console.log(file)
   message.success("上传成功")
-  let fileName = (event?.target as XMLHttpRequest).responseXML
-  // console.log(file)
-  // const ext = file.name.split('.')[1]
-  // file.name = `更名.${ext}`
-  // file.url = String(fileUrl)
-  // console.log(file)
+  let fileUrl = (event?.target as XMLHttpRequest).response
+  console.log(fileUrl)
+  file.url = String(fileUrl)
+  router.push('/')
   return file
 }
 

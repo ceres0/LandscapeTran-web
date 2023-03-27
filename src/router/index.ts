@@ -21,6 +21,11 @@ const router = createRouter({
       path: '/draw',
       name: 'draw',
       component: () => import('../views/DrawView.vue')
+    },
+    {
+      path: '/result',
+      name: 'result',
+      component: () => import('../views/ResultView.vue')
     }
   ]
 })
