@@ -6,8 +6,8 @@ import { defineComponent } from 'vue'
 
 <template>
   <!-- <n-loading-bar-provider>
-                <content />
-              </n-loading-bar-provider> -->
+                                    <content />
+                                  </n-loading-bar-provider> -->
   <header>
     <div>
       <nav>
@@ -18,16 +18,14 @@ import { defineComponent } from 'vue'
     </div>
   </header>
 
-  <RouterView />
+  <n-layout content-style="padding: 24px;" style="background-color: rgba(255, 255, 255 , 0.9);">
+    <RouterView />
+  </n-layout>
   <n-back-top :right="100" />
 </template>
 
 
 <style scoped>
-root {
-  background-color: #f5f5dc;
-}
-
 header {
   line-height: 1.5;
   max-height: 100vh;

@@ -1,4 +1,5 @@
 <template>
+	<!-- <n-layout content-style="padding: 24px;" style="background-color: rgba(245, 245, 220 , 0.9);height: 700px;"> -->
 	<n-result status="success" title="成功">
 		<template #footer>
 			<n-grid>
@@ -15,6 +16,7 @@
 			</n-grid>
 		</template>
 	</n-result>
+	<!-- </n-layout> -->
 </template>
 <script setup lang="ts">
 import { useRoute } from 'vue-router';

@@ -11,18 +11,13 @@ const srcList = [
 ]
 </script>
 <template>
-	<!-- <div class="about">
-			<h1>This is a cp ` ` page</h1>
-		</div> -->
-	<n-card>
-		<!-- <div class="green"> -->
+	<n-layout>
 		<n-grid x-gap="12" :cols="4">
 			<n-gi v-for="src in srcList">
 				<ImageShow v-bind:src="src" />
 			</n-gi>
 		</n-grid>
-		<!-- </div>  -->
-	</n-card>
+	</n-layout>
 </template>
 
 <style>

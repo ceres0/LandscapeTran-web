@@ -7,45 +7,48 @@ import CommunityView from './CommunityView.vue';
 
 <template>
   <main>
-    <n-layout content-style="padding: 24px;">
+    <!-- <n-layout content-style="padding: 24px;"> -->
+    <n-space vertical>
       <n-grid>
-        <n-grid-item span="8" :offset="14">
-          <div class="light-green">
-            <n-loading-bar-provider>
-              <n-message-provider>
-                <n-notification-provider>
-                  <n-dialog-provider>
-                    <Carousel />
-                  </n-dialog-provider>
-                </n-notification-provider>
-              </n-message-provider>
-            </n-loading-bar-provider>
-          </div>
-        </n-grid-item>
+        <n-gi span="6" :offset="4">
+          <n-gradient-text :gradient="{
+            from: 'rgb(85, 85, 85)',
+            to: 'rgb(170, 170, 170)'
+          }" style="padding: 70px 0;" :size="30">
+            探索山水之美
+          </n-gradient-text>
+          <n-gradient-text :gradient="{
+            from: 'rgb(85, 85, 85)',
+            to: 'rgb(170, 170, 170)'
+          }" style="padding: 0px 0;" :size="30">
+            开启风格迁移的艺术之旅
+          </n-gradient-text>
+        </n-gi>
+        <n-gi span="8" :offset="4">
+          <n-loading-bar-provider>
+            <n-message-provider>
+              <n-notification-provider>
+                <n-dialog-provider>
+                  <Carousel />
+                </n-dialog-provider>
+              </n-notification-provider>
+            </n-message-provider>
+          </n-loading-bar-provider>
+        </n-gi>
       </n-grid>
-    </n-layout>
-    <n-layout content-style="padding: 24px;">
       <n-grid>
-        <n-grid-item :offset="11">
+        <n-gi :offset="11">
           <n-message-provider>
-          <TranDialog />
-        </n-message-provider>
-      </n-grid-item>
+            <TranDialog />
+          </n-message-provider>
+        </n-gi>
       </n-grid>
-    </n-layout>
-    <n-layout embedded content-style="padding: 24px;">
-      <!-- <n-layout-header><n-gradient-text :gradient="{
-                              from: 'rgb(85, 85, 85)',
-                              to: 'rgb(170, 170, 170)'
-                            }" size="30">社区</n-gradient-text></n-layout-header> -->
-      <n-layout-content>
-        <n-card>
-          <!-- <div class="green"> -->
-          <CommunityView />
-          <!-- </div>  -->
-        </n-card>
-      </n-layout-content>
-    </n-layout>
+      <n-card>
+        <!-- <div class="green"> -->
+        <CommunityView />
+        <!-- </div>  -->
+      </n-card>
+    </n-space>
   </main>
 </template>
 

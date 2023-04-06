@@ -4,6 +4,12 @@
       <n-icon size="50"><cash-icon /></n-icon>
     </template>
   </n-button>
+  <n-gradient-text :gradient="{
+    from: 'rgb(85, 85, 85)',
+    to: 'rgb(170, 170, 170)'
+  }" :size="25">
+    开始迁移
+  </n-gradient-text>
   <n-modal v-model:show="showModal" :mask-closable="false" preset="dialog" title="画风迁移" negative-text="算了"
     @negative-click="onNegativeClick">
     <n-spin :show="spanshow">
